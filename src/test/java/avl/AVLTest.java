@@ -5,12 +5,16 @@ import org.junit.FixMethodOrder;
 
 import java.util.Arrays;
 
+import org.junit.Rule;
+import org.junit.rules.Timeout;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AVLTest {
+  @Rule
+  public Timeout globalTimeout = Timeout.seconds(3); // 3sec timeout
 
   private static String preOrder(AVL.Node n) {
     if (n == null) {
@@ -177,6 +181,7 @@ public class AVLTest {
     a.bstInsert("moo");
     a.bstInsert("quack");
     a.bstInsert("neigh");
+    check(a);
     a.bstInsert("neigh");
     check(a);
     a.bstInsert("oink");
