@@ -8,6 +8,7 @@ public class Vocab {
   public static void main(String[] args) {
 
     try {
+      // TODO: Change this to make it handle multiple input files.
       File f = new File(args[0]);
       Scanner sc = new Scanner(f);
       Count c = wordCount(sc);
