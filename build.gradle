@@ -35,6 +35,7 @@ run {
 test {
     testLogging {
         // set options for log level LIFECYCLE
+        showStandardStreams = true
         events "failed"
         exceptionFormat "short"
     }
